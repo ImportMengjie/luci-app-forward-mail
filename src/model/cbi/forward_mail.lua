@@ -22,7 +22,8 @@ if fs.access("/usr/bin/forward-mail") then
 
     local apply = luci.http.formvalue("cbi.apply")
     if apply then
-        io.popen("/etc/init.d/forward-mail restart")
+        io.popen("/etc/init.d/forward-mail stop")
+        io.popen("/etc/init.d/forward-mail start &")
     end
 else
     m.pageaction = false
