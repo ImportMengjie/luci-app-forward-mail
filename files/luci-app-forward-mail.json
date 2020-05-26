@@ -1,0 +1,11 @@
+{                                                                                                                                                                                             
+        "luci-app-forward-mail": {                                                                                                                                                              
+                "description": "Grant UCI access for luci-app-forawrd-mail",                                                                                                                        
+                "read": {                                                                                                                                                                     
+                        "uci": ["forward-mail"]                                                                                                                                                 
+                },                                                                                                                                                                            
+                "write": {                                                                                                                                                                    
+                        "uci": ["forward-mail"]                                                                                                                                                 
+                }                                                                                                                                                                             
+        }                                                                                                                                                                                     
+}           

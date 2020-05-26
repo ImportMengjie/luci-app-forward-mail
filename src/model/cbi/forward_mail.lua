@@ -15,9 +15,9 @@ if fs.access("/usr/bin/forward-mail") then
     user_mail_smtp_url = user_mail_section:option(Value, "smtp_url", "user mail smtp_url")
 
     others_mail_section = m:section(TypedSection, "others_mail", "转发目的邮箱设置")
-    user_mail_section.anonymous = false
+    others_mail_section.anonymous = false
 
-    to_mail_address = user_mail_section:option(ListValue, "to_address", "to mail address")
+    to_mail_address = others_mail_section:option(DynamicList, "to_address", "to mail address")
 
 
     local apply = luci.http.formvalue("cbi.apply")

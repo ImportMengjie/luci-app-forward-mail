@@ -35,9 +35,12 @@ define Package/luci-app-forward-mail/install
 	$(INSTALL_DIR) $(1)/usr/lib/lua/luci/model/cbi
 	$(INSTALL_DIR) $(1)/usr/lib/lua/luci/controller
 
-	# $(INSTALL_DATA) ./files/etc/helloworld.conf $(1)/etc/config/helloworld
+	$(INSTALL_DIR) $(1)/usr/share/rpcd/acl.d
+	$(INSTALL_DATA) ./files/luci-app-forward-mail.json $(1)/usr/share/rpcd/acl.d/luci-app-forward-mail.json
+
 	$(INSTALL_DATA) ./src/controller/forward_mail.lua $(1)/usr/lib/lua/luci/controller/forward_mail.lua
 	$(INSTALL_DATA) ./src/model/cbi/forward_mail.lua $(1)/usr/lib/lua/luci/model/cbi/forward_mail.lua
+
 endef
 
 $(eval $(call BuildPackage,luci-app-forward-mail))
